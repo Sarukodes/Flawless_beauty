@@ -1,0 +1,30 @@
+body{
+    background-color: #EFEFF8;
+}
+.main {
+    margin-left: 240px;
+    padding-left: 15px;
+    padding-right: 15px;
+    #jumbo{
+        background-color: white;
+        padding:15px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        a{
+            color:#675FE5;
+            text-decoration: none;
+        }
+    }
+}
+
+label {
+    font-weight: 600;
+    color: var(--sidebar-color);
+}
+
+
+.small{
+    .dropify-wrapper .dropify-message p {
+        font-size: 1.2rem;
+    }
+}

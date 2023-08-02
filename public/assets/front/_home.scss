@@ -1,0 +1,109 @@
+.body {
+    background-color: #f6f7fb;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.nav {
+    display: flex;
+    height: 100px;
+    overflow: hidden;
+
+    .nav-button {
+        background-color: #393d46;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        width: 100px;
+        height: 100px;
+    }
+    span {
+        margin: 30px;
+        font-size: 20px;
+        padding: 10px;
+        text-transform: capitalize;
+    }
+    .left-icons {
+        display: flex;
+        align-items: center;
+        position: relative;
+        left: 55%;
+        margin: 20px;
+        gap: 50px;
+    }
+    .login-button {
+        background-color: #393d46;
+        color: white;
+        padding: 0px 20px;
+        margin-left: 10px;
+        border: none;
+        margin: 30px;
+        cursor: pointer;
+        position: relative;
+        left: 54%;
+        height: 50px;
+    }
+}
+
+.home-main {
+    display: flex;
+    .control {
+        width: 100px;
+    }
+    .main-wrapper {
+        flex: 1;
+        .category {
+            .category-title {
+                margin-top: 50px;
+                margin-bottom: 20px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+
+            .category-holder {
+                background-color: white;
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+                .category-single {
+                    padding: 20px;
+                    text-align: center;
+                    height: 135px;
+                    width: 135px;
+                    .icon {
+                        img {
+                            height: 50px;
+                        }
+                    }
+                    .text {
+                        padding-top: 10px;
+                        font-weight: 600;
+                    }
+
+                    &.active,
+                    &:hover {
+                        background-color: #393d46;
+
+                        .text {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.product {
+    margin-top: 50px;
+    // padding: 10px 20px;
+
+    .image {
+        // margin: 20px;
+        img {
+            width: 100%;
+        }
+    }
+    .button {
+        padding: 10px 20px;
+        background-color: #f6f7fb;
+        float: right;
+    }
+}
