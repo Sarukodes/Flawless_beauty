@@ -1,5 +1,5 @@
 .home {
-   
+
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -11,6 +11,10 @@
         font-weight: bold;
         padding-top: 20px;
         border-bottom: 1px solid #bbaa95;
+        .a{
+            text-decoration: none;
+            color: white
+        }
         .flaw {
             font-size: 40px;
         }
@@ -65,8 +69,8 @@
             border: 1px solid #fed6ce;
             border-radius: 5px;
             // padding: 10px;
-            width: 240px;
-            height: 240px;
+            width: 150px;
+            height: 150px;
             margin: auto;
             display: flex;
             flex-direction: column;
@@ -75,14 +79,15 @@
             margin-bottom: 30px;
 
             img {
-                width: 150px;
-                height: 150px;
+                width: 50px;
+                height: 50px;
                 object-fit: cover;
             }
-            h4 {
+            h5 {
 
                 justify-content: center;
                 font-weight: 400;
+
 
             }
             p{
@@ -104,6 +109,7 @@
         display: flex;
         flex-wrap: wrap;
         // justify-content: center;
+
         .product-box {
             background-color: #F3F3F3;
             border: 1px solid #F3F3F3;
@@ -117,6 +123,13 @@
             justify-content: flex-end;
             align-items: center;
             margin-bottom: 30px;
+            .product-link {
+                text-decoration: none;
+                color: inherit;
+                align-items: center;
+
+            }
+
             .fa-bag-shopping {
                 display: none;
                 position: absolute;
@@ -126,8 +139,8 @@
                 font-size: 24px;
             }
             &:hover{
-                background-color: #C1C1C1;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+                // background-color: #C1C1C1;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 
             }
 
@@ -149,3 +162,52 @@
         }
     }
 }
+
+
+.product-show{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-size: contain;
+    background-color: white;
+    .selected-product{
+    img{
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    margin-top: 80px;
+    }
+}
+    .product-details{
+        .name{
+            margin-top: 50px;
+            font-size: 30px;
+        }
+        .price{
+            margin-top: 50px;
+            color: #F85606;
+        }
+        .sale_price{
+         margin-top: -15px;
+         text-decoration: line-through;
+         color: #9E9E9E;
+        }
+        .quantity{
+            margin-top: 50px;
+        }
+        .button{
+            display: flex;
+            margin-top: 70px;
+            .buy{
+                background-color: #2ABBE8;
+                border: 1.2px solid #2ABBE8;
+            }
+
+       .card{
+          margin-left: 15px;
+          background-color: #F57224;
+          border:  solid #F57224;
+          border-radius: 0%;
+       }
+    }
+}}

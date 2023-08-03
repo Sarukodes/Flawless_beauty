@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\product;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -16,6 +16,10 @@ class HomeController extends Controller
         $categories=DB::table("categories")->get(["id","title",'image','des']);
         return view('front.home' ,compact('sliders','products','categories','image'));
     }
-
+    public function product($id)
+    {
+        $product = Product::find($id);
+        return view('front.productShow', compact('product'));
+    }
 
 }

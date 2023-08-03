@@ -1,0 +1,16 @@
+.product-show {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-size: contain;
+  background-color: #EFF0F5;
+}
+.product-show img {
+  width: 300px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.product-show .product-name {
+  font-size: 30px;
+}/*# sourceMappingURL=product.css.map */

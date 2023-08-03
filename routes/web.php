@@ -27,6 +27,7 @@ Route::get('/', function () {
 Route::name('front')->name('front.')->group(function () {
     Route::get('',[HomeController::class,'index'])->name('index');
     Route::get('/catogery',[HomeController::class,'catogery'])->name('catogery');
+    Route::get('/products/{id}', [HomeController::class,'product'])->name('product');
 });
 
 
@@ -52,6 +53,8 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::match(['GET', 'POST'], 'edit/{product}', [ProductController::class, 'edit'])->name('edit');
         Route::get('del/{product}', [ProductController::class, 'del'])->name('del');
         Route::get('gallery/{product}',  [galleryController::class, 'index'])->name('gallery');
+        // Route::get('/products/{id}', [ProductController::class,'product'])->name('product');
+
     });
     Route::prefix('gallery')->name('gallery.')->group(function () {
         Route::match(['GET', 'POST'], 'add', [galleryController::class, 'add'])->name('add');

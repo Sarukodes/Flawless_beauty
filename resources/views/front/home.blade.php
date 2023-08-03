@@ -11,7 +11,7 @@
     url('{{asset($image->image)}}');">
         <div class="container">
          <div class="navbar">
-            <li> Home </li>
+            <a href="{{route('front.index')}}" class="a"> Home </a>
             <div class="flaw">Flawless</div>
             <div class="icon">
                 <i class="fa-solid fa-bag-shopping" style="padding: 20px"></i>
@@ -33,7 +33,7 @@
                 @foreach ($categories as $key => $category)
                     <div class="category-box">
                         <img src="{{ $category->image }}">
-                        <h4>{{ $category->title }}</h4>
+                        <h5>{{ $category->title }}</h5>
                         <p> {{$category->des}}</p>
                         </div>
                 @endforeach
@@ -44,17 +44,16 @@
             <div class="product-holder">
                 @foreach ($products as $key =>$product)
                 <div class="product-box">
+                    <a href="{{ route('front.product', ['id' => $product->id]) }}"  class="product-link">
                     <img src ="{{$product->image}}">
                     <h4>{{$product->name}}</h4>
                     <div class="overlay">
                         <i class="fa-solid fa-bag-shopping"></i>
                     </div>
+                    </a>
                 </div>
             @endforeach
             </div>
         </div>
-
     </section>
-
-
 @endsection
