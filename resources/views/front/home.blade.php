@@ -3,7 +3,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 @endsection
 @section('content')
-    <section class="home">
+    <section class="home" style=" background-image: linear-gradient(
+        180deg,
+        rgba(22, 23, 23, 0.42),
+        rgba(239, 155, 231, 0.167)
+    ),
+    url('{{asset($image->image)}}');">
         <div class="container">
          <div class="navbar">
             <li> Home </li>
@@ -15,13 +20,9 @@
         </div>
             <div class="home-text col-md-5">
                 {{-- <span class="welcome"> {{$image->upper_text}} </span> <br> --}}
-                @foreach ($images as $image)
                 <span class="welcome"> {{$image->upper_text}} </span> <br>
                 <span class="up ">{{$image->text}}</span><br>
-                @endforeach
-                @foreach ($images as $image)
                 <button class="shop">{{$image->button_text}}</button>
-                @endforeach
             </div>
         </div>
     </section>
