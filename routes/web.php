@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\galleryController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\loginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,12 +26,12 @@ Route::get('/', function () {
 });
 
 Route::name('front')->name('front.')->group(function () {
-    Route::get('',[HomeController::class,'index'])->name('index');
-    Route::get('/catogery',[HomeController::class,'catogery'])->name('catogery');
-    Route::get('/products/{id}', [HomeController::class,'product'])->name('product');
+    Route::get('', [HomeController::class, 'index'])->name('index');
+    Route::get('/catogery', [HomeController::class, 'catogery'])->name('catogery');
+    Route::get('/products/{id}', [HomeController::class, 'product'])->name('product');
+    Route::match(['GET', 'POST'], '/login', [loginController::class, 'login'])->name('login');
+    Route::match(['GET', 'POST'], 'signup', [loginController::class, 'signup'])->name('signup');
 });
-
-
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('', [DashboardController::class, 'index'])->name('index');
@@ -52,7 +53,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::match(['GET', 'POST'], 'add', [ProductController::class, 'add'])->name('add');
         Route::match(['GET', 'POST'], 'edit/{product}', [ProductController::class, 'edit'])->name('edit');
         Route::get('del/{product}', [ProductController::class, 'del'])->name('del');
-        Route::get('gallery/{product}',  [galleryController::class, 'index'])->name('gallery');
+        Route::get('gallery/{product}', [galleryController::class, 'index'])->name('gallery');
         // Route::get('/products/{id}', [ProductController::class,'product'])->name('product');
 
     });
@@ -60,10 +61,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::match(['GET', 'POST'], 'add', [galleryController::class, 'add'])->name('add');
         Route::get('del/{gallery}', [galleryController::class, 'del'])->name('del');
     });
-    Route::prefix('image')->name('image.')->group(function(){
-        Route::get('',[ImageController::class,'index'])->name('index');
+    Route::prefix('image')->name('image.')->group(function () {
+        Route::get('', [ImageController::class, 'index'])->name('index');
         Route::match(['GET', 'POST'], 'add', [ImageController::class, 'add'])->name('add');
         Route::match(['GET', 'POST'], 'edit/{image}', [ImageController::class, 'edit'])->name('edit');
-        Route::get('del/{image}' , [ImageController::class, 'del'])->name('del');
+        Route::get('del/{image}', [ImageController::class, 'del'])->name('del');
     });
 });

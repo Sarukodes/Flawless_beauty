@@ -3,8 +3,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 @endsection
 @section('content')
-
     <div class="container">
+        <div class="product-nav">
+            <div class="navbar">
+                <a href="{{ route('front.index') }}" class="a"> Home </a>
+                <div class="flaw">Flawless</div>
+                <div class="icon">
+                    <i class="fa-solid fa-bag-shopping" style="padding: 20px"></i>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+        </div>
         <div class="row m-0 product-show">
             <div class="col-md-5 ps-0 ">
                 <div class="selected-product">

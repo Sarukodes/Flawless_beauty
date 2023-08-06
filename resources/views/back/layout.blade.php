@@ -26,12 +26,12 @@
                         <span class="links_name">Dashboard</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('admin.slider.index') }}" class="">
                         <i class="fa-solid fa-sliders"></i>
                         <span class="links_name">Slider</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="{{ route('admin.image.index') }}" class="">
                         <i class="fa-solid fa-sliders"></i>

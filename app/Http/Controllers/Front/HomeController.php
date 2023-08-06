@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function product($id)
     {
         $product = Product::find($id);
+        // $products=DB::table("products")->get(["id","name","image",'price']);
         return view('front.productShow', compact('product'));
     }
-
 }
