@@ -4,31 +4,41 @@
 @endsection
 @section('content')
     <div class="login ">
-        <form action="{{route('front.signup')}}" method="POST">
+        <form action="{{ route('front.signup') }}" method="POST">
             @csrf
             <div class="box">
-                <div class="head">
-                    Welcome to Flawless! Please Signup
-                </div>
-                <div class="form">
-                    <label for="">Name*</label><br>
-                    <input type="text" name="name" id="name" class="input-box" required>
-                </div>
-                <div class="form">
-                    <label for="">email*</label><br>
-                    <input type="text" name="email" id="email" class="input-box" required>
-                </div>
-                <div class="form">
-                    <label for="">Password*</label><br>
-                    <input type="text" name="password" id="password" class="input-box" required>
-                </div>
-                <button class="login"> Signup </button>
-                <div class="down">
-                    <div class="down">
-                        Already have an account? <a href="{{ route('front.login') }}" class="">Login</a>
+                <div class="row">
+                    <div class="col md 6">
+                        <div class="girl-signup">
+                            @foreach ($imagess as $image)
+                            <img src="{{ asset($image->signup_image) }}" alt="" srcset="">
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="col-md-6 text">
+                        <div class="head">
+                            <p class="flaw">Flawless</p>
+                            {{-- <p class="log">Signup</p> --}}
+                            <p class="welcome"> Welcome to Flawless! Please Signup</p>
+                        </div>
+                        <div class="form">
+                            <label for="">Name*</label><br>
+                            <input type="text" name="name" id="name" class="input-box" required>
+                        </div>
+                        <div class="form">
+                            <label for="">email*</label><br>
+                            <input type="text" name="email" id="email" class="input-box" required>
+                        </div>
+                        <div class="form">
+                            <label for="">Password*</label><br>
+                            <input type="text" name="password" id="password" class="input-box" required>
+                        </div>
+                        <button class="login"> Signup </button>
+                        <div class="down">
+                            Already have an account? <a href="{{ route('front.login') }}" class="">Login</a>
+                        </div>
                     </div>
                 </div>
-            </div>
         </form>
     </div>
 @endsection

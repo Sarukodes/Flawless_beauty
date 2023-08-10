@@ -6,8 +6,10 @@ use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\galleryController;
+use App\Http\Controllers\Admin\adminLoginController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\loginController;
+use App\Http\Controllers\Front\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,10 +33,12 @@ Route::name('front')->name('front.')->group(function () {
     Route::get('/products/{id}', [HomeController::class, 'product'])->name('product');
     Route::match(['GET', 'POST'], '/login', [loginController::class, 'login'])->name('login');
     Route::match(['GET', 'POST'], 'signup', [loginController::class, 'signup'])->name('signup');
+    Route::get('/cart',[CartController::class, 'cart'])->name('cart');
 });
 
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('', [DashboardController::class, 'index'])->name('index');
+    Route::match(['GET', 'POST'],'/login', [adminLoginController::class,'login'])->name('login');
 
     Route::prefix('slider')->name('slider.')->group(function () {
         Route::get('', [SliderController::class, 'index'])->name('index');
@@ -68,3 +72,4 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('del/{image}', [ImageController::class, 'del'])->name('del');
     });
 });
+

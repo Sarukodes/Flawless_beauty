@@ -10,7 +10,9 @@
         <div class="card-body">
             <table class="table table-bordered">
                 <thead>
-                    <th> Image </th>
+                    <th> Background image </th>
+                    <th> Login Image </th>
+                    <th> Signup Image </th>
                     <th> Upper Text </th>
                     <th> Text </th>
                     <th> Button text </th>
@@ -21,6 +23,12 @@
                         <tr>
                             <td>
                                 <img src="{{ asset($image->image) }}" alt="" width="50px">
+                            </td>
+                            <td>
+                                <img src="{{ asset($image->login_image) }}" alt="" width="50px">
+                            </td>
+                            <td>
+                                <img src="{{ asset($image->signup_image) }}" alt="" width="50px">
                             </td>
                             <td> {{ $image->upper_text }}</td>
                             <td> {{ $image->text }}</td>

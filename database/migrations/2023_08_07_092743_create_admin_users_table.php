@@ -13,14 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('image_models', function (Blueprint $table) {
+        Schema::create('admin_users', function (Blueprint $table) {
             $table->id();
-            $table->text('image');
-            $table->text('login_image');
-            $table->text('signup_image');
-            $table->text('upper_text');
-            $table->text('text');
-            $table->text('button_text');
+            $table->string('username')->unique();
+            $table->string('password');
+            $table->boolean('is_admin')->default(true);
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('image_models');
+        Schema::dropIfExists('admin_users');
     }
 };

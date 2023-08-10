@@ -12,8 +12,16 @@
 @csrf
 <div class="row">
     <div class="col-md-4 mb-2 small">
-        <label for="">Image</label>
+        <label for="">Background Image</label>
         <input type="file" name="image" id="image" class="form-control photo" accept="image/*">
+    </div>
+    <div class="col-md-4 mb-2 small">
+        <label for="">Login Image</label>
+        <input type="file" name="login_image" id="login_image" class="form-control photo" accept="image/*">
+    </div>
+    <div class="col-md-4 mb-2 small">
+        <label for="">Signup Image</label>
+        <input type="file" name="signup_image" id="signup_image" class="form-control photo" accept="image/*">
     </div>
     <div class="col-md-8 mb-2">
         <div>

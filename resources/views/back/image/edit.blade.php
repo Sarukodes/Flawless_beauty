@@ -19,6 +19,16 @@
                     <input type="file" name="image" id="image" class="form-control photo" accept="image/*"
                         data-default-file='{{ asset($image->image) }}'>
                 </div>
+                <div class="col-md-4 mb-2 small">
+                    <label for="">Login Image</label>
+                    <input type="file" name="login_image" id="login_image" class="form-control photo" accept="image/*"
+                    data-default-file='{{ asset($image->login_image) }}'>
+                </div>
+                <div class="col-md-4 mb-2 small">
+                    <label for="">Login Image</label>
+                    <input type="file" name="signup_image" id="signup_image" class="form-control photo" accept="image/*"
+                    data-default-file='{{ asset($image->signup_image) }}'>
+                </div>
                 <div class="col-md-8 mb-2">
                     <div>
                         <label for="">Upper_text</label>

@@ -1,0 +1,44 @@
+.login {
+  font-size: 20px;
+  background-color: #54ABE3;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.login .box {
+  border: 1px solid #54ABE3;
+  width: 380px;
+  height: 500px;
+  background-color: white;
+  border-radius: 15px;
+}
+.login .box .head {
+  padding: 15px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 25px;
+}
+.login .box .form {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  padding-left: 28px;
+}
+.login .box .form .input-box {
+  width: 320px;
+}
+.login .box .login {
+  height: 40px;
+  width: 320px;
+  border-color: #54ABE3;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  margin-left: 28px;
+  border: none;
+}
+.login .box .login:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}/*# sourceMappingURL=adminLogin.css.map */

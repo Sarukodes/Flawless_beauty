@@ -19,6 +19,8 @@ class ImageController extends Controller
         if ($request->getMethod() == 'POST') {
             $image = new imageModel();
             $image->image = $request->image->store('uploads/image');
+            $image->login_image = $request->login_image->store('uploads/image');
+            $image->signup_image = $request->signup_image->store('uploads/image');
             $image->upper_text = $request->upper_text;
             $image->text = $request->text;
             $image->button_text = $request->button_text;
@@ -40,6 +42,12 @@ class ImageController extends Controller
             $image->button_text = $request->button_text;
             if ($request->hasFile('image')) {
                 $image->image = $request->image->store('uploads/image');
+            }
+            if ($request->hasFile('login_image')) {
+                $image->login_image = $request->login_image->store('uploads/image');
+            }
+            if ($request->hasFile('signup_image')) {
+                $image->signup_image = $request->signup_image->store('uploads/image');
             }
             $image->save();
             return redirect()->back();

@@ -9,8 +9,12 @@
                 <a href="{{ route('front.index') }}" class="a"> Home </a>
                 <div class="flaw">Flawless</div>
                 <div class="icon">
-                    <i class="fa-solid fa-bag-shopping" style="padding: 20px"></i>
-                    <i class="fa-solid fa-user"></i>
+                    <a href="{{ route('front.cart') }}">
+                        <i class="fa-solid fa-bag-shopping" style="padding: 20px"></i>
+                    </a>
+                    <a href="{{ route('front.login') }}">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -20,21 +24,48 @@
                     <img src="{{ asset($product->image) }}" alt="" srcset="">
                 </div>
             </div>
-            <div class="col-md-5 pe">
+            <div class="col-md-4 pe">
                 <div class="product-details">
                     <p class="name">{{ $product->name }}</p>
                     <p class="price"> Rs.{{ $product->price }}</p>
                     <p class="sale_price"> Rs.{{ $product->sale_price }}</p>
+                    <p class="des"> {{ $product->short_desc }}</p>
                     <div class="quantity">
                         <label for="quantity">Quantity:</label>
                         <input type="number" id="quantity" name="quantity" value="1" min="1">
                     </div>
                     <div class="button">
                         <button class="buy">Buy Now</button>
-                        <button class="card">Add to card</button>
+                        <button class="card" onclick="showCartPopup()">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+{{--
+@section('scripts')
+    <script>
+        function showCartPopup() {
+            $("#cart-popup").fadeIn(2000).fadeOut();
+        }
+    </script>
+@endsection --}}
+
+
+@section('scripts')
+    <script>
+        function showCartPopup() {
+
+            var productName = "{{ $product->name }}";
+            var productPrice = "{{ $product->price }}";
+            var productImage = "{{ asset($product->image) }}";
+
+            var cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name: productName, price: productPrice, image: productImage });
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            window.location.href = "{{ route('front.cart') }}";
+        }
+    </script>
 @endsection
