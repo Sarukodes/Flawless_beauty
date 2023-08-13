@@ -52,7 +52,7 @@
                 </li>
 
                 <li class="log_out">
-                    <a href="{{route('admin.login')}}">
+                    <a href="{{route('logout')}}">
                         <i class="fa-solid fa-user"></i>
                         <span class="links_name">Log out</span>
                     </a>

@@ -26,7 +26,7 @@
                         </div>
                         <div class="form">
                             <label for="">Email</label><br>
-                            <input type="text" name="email" id="email" class="input-box" placeholder="Enter your name" required>
+                            <input type="text" name="email" id="email" class="input-box" placeholder="Enter email address" required>
                         </div>
                         <div class="form">
                             <label for="">Password</label><br>
@@ -36,7 +36,7 @@
                         <a href="" class="form"> Forget Password?</a>
                         <button class="login"> Login </button>
                         <p class="google">Or you can log In with email<br>
-                            <button class="goo">Login with google</button>
+                            <button class="goo"> <i class="fa-brands fa-google"></i> Login with google</button>
                         <div class="down">
                             Don't have an account? <a href="{{ route('front.signup') }}" class="">Signup</a>
                         </div>

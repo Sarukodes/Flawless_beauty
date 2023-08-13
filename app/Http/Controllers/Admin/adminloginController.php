@@ -7,25 +7,26 @@ use Illuminate\Http\Request;
 use App\Models\AdminUser;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+
 class adminloginController extends Controller
 {
 
+    public function logout()  {
+        Auth::logout();
+        return redirect()->route('login');
+    }
     public function login(Request $request)
     {
-        if ($request->isMethod('post')) {
-            $username = 'saru';
-            $password = '12345';
 
-            $adminUser = AdminUser::where('username', $username)->first();
-
-            if ($adminUser && Hash::check($password, $adminUser->password)) {
-                Auth::login($adminUser);
+        if($request->getMethod()=="POST"){
+            if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
                 return redirect()->route('admin.index');
             } else {
-                return back()->withErrors(['message' => 'Invalid credentials']);
+                return redirect()->back()->withInput()->withErrors(['Invalid credentials']);
             }
-        }
+        }else{
 
-        return view('back.login');
+            return view('back.login');
+        }
     }
 }

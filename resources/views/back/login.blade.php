@@ -13,15 +13,24 @@
 </head>
 <body>
     <div class="login ">
-        <form action="{{ route('admin.login') }}" method="POST">
+        <form action="{{ route('login') }}" method="POST">
             @csrf
                 <div class="box">
                     <div class="head">
                         Welcome Admin! Please login
                     </div>
                     <div class="form">
-                        <label for="username">Username*</label><br>
-                        <input type="username" name="username" id="username" class="input-box"  required>
+
+                        @if($errors->any())
+                            @foreach ($errors->all() as $err)
+                                <div class="text-danger">{{$err}}</div>
+                            @endforeach
+                        @endif
+                    </div>
+
+                    <div class="form">
+                        <label for="email">Email*</label><br>
+                        <input type="email" name="email" id="email" class="input-box" value="{{old('email')}}" required>
                     </div>
                     <div class="form">
                         <label for="password">Password*</label><br>
