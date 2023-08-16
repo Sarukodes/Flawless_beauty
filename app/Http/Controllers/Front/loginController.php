@@ -39,7 +39,7 @@ class loginController extends Controller
             $user->email = $request->email;
             $user->password = bcrypt($request->password);
             $user->save();
-            return redirect()->route('front.login');
+            return redirect()->route('front.auth.login');
         } else {
             return view('front.login.signup', compact('imagess'));
         }

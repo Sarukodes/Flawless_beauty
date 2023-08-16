@@ -31,18 +31,22 @@ Route::name('front')->name('front.')->group(function () {
     Route::get('', [HomeController::class, 'index'])->name('index');
     Route::get('/catogery', [HomeController::class, 'catogery'])->name('catogery');
     Route::get('/products/{id}', [HomeController::class, 'product'])->name('product');
-    Route::match(['GET', 'POST'], '/login', [loginController::class, 'login'])->name('login');
-    Route::match(['GET', 'POST'], 'signup', [loginController::class, 'signup'])->name('signup');
-    Route::get('/cart',[CartController::class, 'cart'])->name('cart');
+    Route::get('/cart', [CartController::class, 'cart'])->name('cart');
+    Route::get('/del/{product}', [CartController::class, 'del'])->name('del');
+
+    Route::prefix('auth')->name('auth.')->group(function () {
+        Route::match(['GET', 'POST'], '/signup', [loginController::class, 'signup'])->name('signup');
+        Route::match(['GET', 'POST'], '/login', [loginController::class, 'login'])->name('login');
+    });
 });
 
-Route::match(['GET', 'POST'],'/login', [adminLoginController::class,'login'])->name('login');
-Route::match(['GET', 'POST'],'/logout', [adminLoginController::class,'logout'])->name('logout');
+Route::match(['GET', 'POST'], '/login', [adminLoginController::class, 'login'])->name('login');
+Route::match(['GET', 'POST'], '/logout', [adminLoginController::class, 'logout'])->name('logout');
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
-    Route::middleware('auth')->group(function(){
-        Route::middleware('IsAdmin')->group(function(){
+    Route::middleware('auth')->group(function () {
+        Route::middleware('IsAdmin')->group(function () {
 
             Route::get('', [DashboardController::class, 'index'])->name('index');
             Route::prefix('slider')->name('slider.')->group(function () {
@@ -79,4 +83,3 @@ Route::prefix('admin')->name('admin.')->group(function () {
         });
     });
 });
-

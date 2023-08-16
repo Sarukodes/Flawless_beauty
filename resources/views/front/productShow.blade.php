@@ -12,7 +12,7 @@
                     <a href="{{ route('front.cart') }}">
                         <i class="fa-solid fa-bag-shopping" style="padding: 20px"></i>
                     </a>
-                    <a href="{{ route('front.login') }}">
+                    <a href="{{ route('front.auth.login') }}">
                         <i class="fa-solid fa-user"></i>
                     </a>
                 </div>
@@ -36,36 +36,21 @@
                     </div>
                     <div class="button">
                         <button class="buy">Buy Now</button>
-                        <button class="card" onclick="showCartPopup()">Add to Cart</button>
+                        <button class="card" onclick="addToCart('{{$product->id}}','{{$product->name}}',1,'{{$product->price}}')">Add to Cart</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 @endsection
-{{--
-@section('scripts')
-    <script>
-        function showCartPopup() {
-            $("#cart-popup").fadeIn(2000).fadeOut();
-        }
-    </script>
-@endsection --}}
-
 
 @section('scripts')
     <script>
-        function showCartPopup() {
-
-            var productName = "{{ $product->name }}";
-            var productPrice = "{{ $product->price }}";
-            var productImage = "{{ asset($product->image) }}";
-
-            var cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart.push({ name: productName, price: productPrice, image: productImage });
-            localStorage.setItem('cart', JSON.stringify(cart));
-
-            window.location.href = "{{ route('front.cart') }}";
-        }
+        function addToCart(product_id) {
+            CART.addproduct({{$product->id}},"{{$product->name}}",1,{{$product->price}},{
+                image:"{{asset($product->image)}}"
+            });
+            // console.log(product_id)
+         }
     </script>
 @endsection

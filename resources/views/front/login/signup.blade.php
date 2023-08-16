@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="login ">
-        <form action="{{ route('front.signup') }}" method="POST">
+        <form action="{{ route('front.auth.signup') }}" method="POST">
             @csrf
             <div class="box">
                 <div class="row">
@@ -35,7 +35,7 @@
                         </div>
                         <button class="login"> Signup </button>
                         <div class="down">
-                            Already have an account? <a href="{{ route('front.login') }}" class="">Login</a>
+                            Already have an account? <a href="{{ route('front.auth.login') }}" class="">Login</a>
                         </div>
                     </div>
                 </div>

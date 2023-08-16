@@ -281,12 +281,20 @@
 .login .box .goo {
   height: 40px;
   width: 320px;
-  border-radius: 0.5px solid #555A70;
+  border: 0.5px solid #555A70;
   margin-top: 5px;
   margin-bottom: 10px;
   border-radius: 5px;
   font-size: 16px;
   background-color: white;
+}
+.login .box .goo .i {
+  color: red;
+}
+.login .box .goo:hover {
+  color: white;
+  background-color: rgb(28, 242, 28);
+  border: 0;
 }
 .login .box .form {
   padding-top: 10px;
@@ -376,8 +384,5 @@
 }
 
 .cart-body {
-  margin-top: 20px;
-}
-.cart-body .select {
   margin-top: 20px;
 }/*# sourceMappingURL=index.css.map */

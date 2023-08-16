@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="login ">
-        <form action="{{ route('front.login') }}" method="POST">
+        <form action="{{ route('front.auth.login') }}" method="POST">
             @csrf
             {{-- <section class="home"
             style=" background-image: linear-gradient(
@@ -15,7 +15,6 @@
         @foreach ($images as $image)
         url('{{ asset($image->image) }}');
         @endforeach"> --}}
-
             <div class="box">
                 <div class="row">
                     <div class="col-md-6 text">
@@ -26,7 +25,7 @@
                         </div>
                         <div class="form">
                             <label for="">Email</label><br>
-                            <input type="text" name="email" id="email" class="input-box" placeholder="Enter email address" required>
+                            <input type="text" name="email" id="email" class="input-box" placeholder="Enter your Email" required>
                         </div>
                         <div class="form">
                             <label for="">Password</label><br>
@@ -36,9 +35,10 @@
                         <a href="" class="form"> Forget Password?</a>
                         <button class="login"> Login </button>
                         <p class="google">Or you can log In with email<br>
-                            <button class="goo"> <i class="fa-brands fa-google"></i> Login with google</button>
+                            <button class="goo"> <i class="fa-brands fa-google"></i> Continue with google</button>
+                         </p>
                         <div class="down">
-                            Don't have an account? <a href="{{ route('front.signup') }}" class="">Signup</a>
+                            Don't have an account? <a href="{{ route('front.auth.signup') }}" class="">Signup</a>
                         </div>
                     </div>
                     <div class="col md 6">
@@ -54,21 +54,3 @@
         </form>
     </div>
 @endsection
-
-{{--
-<script>
-    const passwordInput = document.getElementById('password');
-    const passwordToggle = document.getElementById('password-toggle');
-
-    passwordToggle.addEventListener('click', function() {
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            passwordToggle.classList.remove('fa-eye');
-            passwordToggle.classList.add('fa-eye-slash');
-        } else {
-            passwordInput.type = 'password';
-            passwordToggle.classList.remove('fa-eye-slash');
-            passwordToggle.classList.add('fa-eye');
-        }
-    });
-</script> --}}
