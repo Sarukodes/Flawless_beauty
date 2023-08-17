@@ -21,7 +21,7 @@
                             <i class="fa-solid fa-bag-shopping"></i>
                         </a>
 
-                    <a href="{{ route('front.auth.login') }}">
+                    <a href="{{ route('auth.login') }}">
                         <i class="fa-solid fa-user"></i>
                     </a>
                 </div>

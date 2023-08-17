@@ -107,9 +107,9 @@
             const cartItemsHtml = CART.products.map(product =>
                 `
 <tr>
-    <td>${product.image}<td>
-    <td>${product.name}<td>
-    <td>${product.price}<td>
+    <td>${product.image}</td>
+    <td>${product.name}</td>
+    <td>${product.price}</td>
     </tr>
     `
 

@@ -36,7 +36,7 @@
                     </div>
                     <div class="button">
                         <button class="buy">Buy Now</button>
-                        <button class="card" onclick="addToCart('{{$product->id}}','{{$product->name}}',1,'{{$product->price}}')">Add to Cart</button>
+                        <button class="card" onclick="addToCart({{$product->id}}, '{{$product->name}}', 1, {{$product->price}}, '{{asset($product->image)}}')">Add to Cart</button>
                     </div>
                 </div>
             </div>

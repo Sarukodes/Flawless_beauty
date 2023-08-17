@@ -12,4 +12,5 @@ public function cart(){
   $products=DB::table('products')->get(['image','name','price']);
     return view('front.cart', compact('products'));
 }
+
 }
