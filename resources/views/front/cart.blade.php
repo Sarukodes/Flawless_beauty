@@ -77,7 +77,7 @@
                     <a href="{{ route('front.cart') }}">
                         <i class="fa-solid fa-bag-shopping" style="padding: 20px"></i>
                     </a>
-                    <a href="{{ route('front.auth.login') }}">
+                    <a href="{{ route('auth.login') }}">
                         <i class="fa-solid fa-user"></i>
                     </a>
                 </div>

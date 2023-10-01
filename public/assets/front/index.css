@@ -274,27 +274,25 @@
   padding-left: 30px;
 }
 .login .box .google {
-  font-size: 14px;
-  padding-left: 30px;
-  color: #555A70;
+  margin-left: 30px;
 }
-.login .box .goo {
-  height: 40px;
-  width: 320px;
-  border: 0.5px solid #555A70;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  font-size: 16px;
-  background-color: white;
-}
-.login .box .goo .i {
-  color: red;
-}
-.login .box .goo:hover {
+.login .box .google .goo {
+  display: inline-block;
+  background-color: #db4a39;
   color: white;
-  background-color: rgb(28, 242, 28);
-  border: 0;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  padding-left: 60px;
+  padding-right: 63px;
+}
+.login .box .google .goo i {
+  margin-right: 10px;
+}
+.login .box .google .goo:hover {
+  background-color: #c63424;
 }
 .login .box .form {
   padding-top: 10px;

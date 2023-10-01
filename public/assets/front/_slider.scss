@@ -299,32 +299,29 @@
             padding-left: 30px;
         }
 
-    }
-    .google{
-        font-size: 14px;
-        padding-left: 30px;
-        color: #555A70;
-        
-    }
-    .goo{
-    height: 40px;
-    width: 320px;
-    border: 0.5px solid #555A70 ;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: white;
-
-    .i{
-        color: red;
-    }
-    &:hover{
+    }  .google {
+        margin-left: 30px;
+    .goo {
+        display: inline-block;
+        background-color: #db4a39;
         color: white;
-        background-color: rgb(28, 242, 28);
-        border: 0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s;
+        padding-left: 60px;
+        padding-right: 63px;
     }
+
+    .goo i {
+        margin-right: 10px;
     }
+
+    .goo:hover {
+        background-color: #c63424;
+    }
+}
     .form{
         padding-top: 10px;
         padding-bottom: 5px;
